@@ -2,8 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-const HelpQueueHeader = styled.h1`
-  font-size: 2rem;
+const HelpQueueHeader = styled.p`
+  font-size: 1.6rem;
+  font-weight: 800;
 `;
 
 const MainHeader = styled.header`
