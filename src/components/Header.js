@@ -3,33 +3,41 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const HelpQueueHeader = styled.h1`
-  font-size: 24px;
-  text-align: center;
-  color: white;
-  background-color: purple;
+  font-size: 2rem;
 `;
 
-const StyledWrapper = styled.section`
-  background-color: orange;
+const MainHeader = styled.header`
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  border-bottom: 1.6px solid #eee;
+`;
+
+const MenuList = styled.ul`
+  display: flex;
+  list-style: none;
+`;
+
+const MenuListItem = styled.li`
+  margin-right: 1rem;
 `;
 
 function Header() {
   return (
-    <StyledWrapper>
+    <MainHeader>
       <React.Fragment>
-        <HelpQueueHeader>
-          <h1>Help Queue</h1>
-        </HelpQueueHeader>
-        <ul>
-          <li>
+        <HelpQueueHeader>Help Queue</HelpQueueHeader>
+        <MenuList>
+          <MenuListItem>
             <Link to='/'>Home</Link>
-          </li>
-          <li>
+          </MenuListItem>
+          <MenuListItem>
             <Link to='/sign-in'>Sign In</Link>
-          </li>
-        </ul>
+          </MenuListItem>
+        </MenuList>
       </React.Fragment>
-    </StyledWrapper>
+    </MainHeader>
   );
 }
 
