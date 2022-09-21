@@ -112,9 +112,6 @@ function TicketControl() {
     setSelectedTicket(selection);
   };
 
-  let currentlyVisibleState = null;
-  let buttonText = null;
-
   if (auth.currentUser == null) {
     return (
       <React.Fragment>
