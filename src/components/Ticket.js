@@ -2,9 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Ticket(props) {
+  const ticketStyle = {
+    backgroundColor: 'blue',
+    fontSize: '16pt',
+  }
   return (
     <React.Fragment>
-      <div onClick={() => props.whenTicketClicked(props.id)}>
+      <div  style={ticketStyle} onClick={() => props.whenTicketClicked(props.id)}>
         <h3>
           {props.location} - {props.names}
         </h3>

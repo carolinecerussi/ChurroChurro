@@ -16,6 +16,7 @@ import {
 import { db, auth } from './../firebase.js';
 import { formatDistanceToNow } from 'date-fns';
 
+
 function TicketControl() {
   const [formVisibleOnPage, setFormVisibleOnPage] = useState(false);
   const [mainTicketList, setMainTicketList] = useState([]);
@@ -88,34 +89,45 @@ function TicketControl() {
   const handleDeletingTicket = async id => {
     await deleteDoc(doc(db, 'tickets', id));
     setSelectedTicket(null);
-  };
+  }
 
   const handleEditClick = () => {
     setEditing(true);
-  };
+  }
 
   const handleEditingTicketInList = async ticketToEdit => {
     const ticketRef = doc(db, 'tickets', ticketToEdit.id);
     await updateDoc(ticketRef, ticketToEdit);
     setEditing(false);
     setSelectedTicket(null);
-  };
+  }
 
   const handleAddingNewTicketToList = async newTicketData => {
     const collectionRef = collection(db, 'tickets');
     await addDoc(collectionRef, newTicketData);
     setFormVisibleOnPage(false);
-  };
+  }
 
   const handleChangingSelectedTicket = id => {
     const selection = mainTicketList.filter(ticket => ticket.id === id)[0];
     setSelectedTicket(selection);
-  };
+  }
 
   let currentlyVisibleState = null;
   let buttonText = null;
 
+const styledButton = {
+  backgroundColor: 'Transparent',
+  backgroundRepeat: 'no-repeat',
+  border: 'none',    
+  color: 'turquoise',
+  fontFamily: 'Dangrek',
+  fontSize: '30pt',
+
+}
+
   if (auth.currentUser == null) {
+
     return (
       <React.Fragment>
         <h1>You must be signed in to access the queue.</h1>
@@ -133,7 +145,7 @@ function TicketControl() {
           ticket={selectedTicket}
           onEditTicket={handleEditingTicketInList}
         />
-      );
+      )
       buttonText = 'Return to Ticket List';
     } else if (selectedTicket != null) {
       currentlyVisibleState = (
@@ -142,12 +154,12 @@ function TicketControl() {
           onClickingDelete={handleDeletingTicket}
           onClickingEdit={handleEditClick}
         />
-      );
+      )
       buttonText = 'Return to Ticket List';
     } else if (formVisibleOnPage) {
       currentlyVisibleState = (
         <NewTicketForm onNewTicketCreation={handleAddingNewTicketToList} />
-      );
+      )
       buttonText = 'Return to Ticket List';
     } else {
       currentlyVisibleState = (
@@ -155,13 +167,13 @@ function TicketControl() {
           onTicketSelection={handleChangingSelectedTicket}
           ticketList={mainTicketList}
         />
-      );
+      )
       buttonText = 'Add Ticket';
     }
     return (
       <React.Fragment>
         {currentlyVisibleState}
-        {error ? null : <button onClick={handleClick}>{buttonText}</button>}
+        {error ? null : <button style={styledButton} onClick={handleClick}>{buttonText}</button>}
       </React.Fragment>
     );
   }
