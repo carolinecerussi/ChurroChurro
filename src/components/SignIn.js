@@ -5,6 +5,20 @@ import {
   signInWithEmailAndPassword,
   signOut
 } from 'firebase/auth';
+import styled from 'styled-components';
+import Header from './Header';
+
+  const SignInStyle = styled.div`
+    color: aliceblue;
+    background-color: orange;
+    font-family: helvetica;
+    text-align: left;
+    `;
+
+
+
+
+
 
 function SignIn() {
   const [signUpSuccess, setSignUpSuccess] = useState(null);
@@ -52,9 +66,16 @@ function SignIn() {
   }
 
   return (
-    <React.Fragment>
+   <SignInStyle>
+    <Header />
+<h1>SIGN</h1>
+<h1>UP</h1>
+<h1>IN</h1>
+<h1>OUT</h1>
+
+
       {/* Signup form lives here */}
-      <h1>Sign up</h1>
+      <h3>Sign up</h3>
       {/* New code below! */}
       {signUpSuccess}
       <form onSubmit={doSignUp}>
@@ -62,7 +83,7 @@ function SignIn() {
         <input type='password' name='password' placeholder='Password' />
         <button type='submit'>Sign up</button>
       </form>
-      <h1>Sign In</h1>
+      <h3>Sign In</h3>
       {/* New sign in success message*/}
       {signInSuccess}
       <form onSubmit={doSignIn}>
@@ -71,11 +92,11 @@ function SignIn() {
         <button type='submit'>Sign in</button>
       </form>
       {/* New sign out button*/}
-      <h1>Sign Out</h1>
+      <h3>Sign Out</h3>
       {signOutSuccess}
       <br />
       <button onClick={doSignOut}>Sign out</button>
-    </React.Fragment>
+</SignInStyle>
   );
 }
 

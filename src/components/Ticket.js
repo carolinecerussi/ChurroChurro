@@ -1,14 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+const TicketStyle = styled.div`
+  font-size: 20pt;
+  padding-vertical: 6;
+  background-color: aliceblue;
+  border-radius: 10pt;
+  text-align: center;
+  margin-horizontal: 1%;
+  width: 48%;
+  margin-bottom: 6;
+  color: black;
+  align-self: flex-start;
+
+  font-family: helvetica;
+  `;
+
+
+
 
 function Ticket(props) {
-  const ticketStyle = {
-    backgroundColor: 'blue',
-    fontSize: '16pt',
-  }
+
   return (
-    <React.Fragment>
-      <div  style={ticketStyle} onClick={() => props.whenTicketClicked(props.id)}>
+
+     <TicketStyle onClick={() => props.whenTicketClicked(props.id)}>
         <h3>
           {props.location} - {props.names}
         </h3>
@@ -19,8 +35,8 @@ function Ticket(props) {
           <em>{props.formattedWaitTime}</em>
         </p>
         <hr />
-      </div>
-    </React.Fragment>
+    </TicketStyle>
+
   );
 }
 

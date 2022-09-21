@@ -7,10 +7,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App(){
   return ( 
     <Router>
-      <Header />
       <Routes>
         <Route path="/sign-in" element={<SignIn />} />
-        <Route path="/" element={<TicketControl />} />
+        <Route path="/" element={<Header />} />
+        <Route path="/orders" element={<TicketControl />} />
       </Routes>
     </Router>
   );

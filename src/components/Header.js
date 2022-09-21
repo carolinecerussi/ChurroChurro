@@ -1,24 +1,32 @@
-import { toBePartiallyChecked } from "@testing-library/jest-dom/dist/matchers";
-import React from "react";
 
+import React from "react";
 import { Link } from "react-router-dom";
+import styled from 'styled-components';
 
 function Header(){
 
-  const headingStyle = {
-    backgroundColor: 'white',
-    color: 'turquoise',
-    }
+
+
+  const HeadingStyle = styled.h1`
+    color: aliceblue;
+    background-color: transparent;
+    font-family:  ;
+    font-size: 40pt;
+    `;
+
+
+
   return (
-    <React.Fragment>
-      <div style={headingStyle} id="header">
-       <Link to="/"> <h1>Help Queue</h1></Link>
+ <HeadingStyle>
+       <Link to="/"> <h1>Churro World</h1></Link>
       <ul>
-          <h4>Already a Member? <span></span>
-         <Link to="/sign-in">Sign Up</Link>
-         </h4> </ul>
-      </div>
-    </React.Fragment>
+      <h />
+         <Link to="/orders">Orders</Link>
+         <span><p>Already a Member? <sp />
+         <Link to="/sign-in">Sign Up</Link></p></span>
+  
+         </ul>
+</HeadingStyle>
   );
 }
 

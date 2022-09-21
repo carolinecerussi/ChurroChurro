@@ -1,17 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { sub } from "date-fns";
+import styled from "styled-components";
 
 function ReusableForm(props) {
   
-  const subButtonStyle = {
-    backgroundColor: 'Transparent',
-    backgroundRepeat: 'no-repeat',
-    border: 'none',    
-    color: 'orange',
-    fontFamily: 'Dangrek',
-    fontSize: '20pt',
+  const StyledButton = styled.button`
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  color: turquoise;
+  font-family: Dangrek;
+  font-size: 30pt;
+  &: hover {
+    color: black;
+    cursor: pointer;
   }
+`;
 
   return (
     <React.Fragment>
@@ -36,7 +41,7 @@ function ReusableForm(props) {
           name='issue'
           placeholder='Describe.' />
           <br></br>
-        <button style={subButtonStyle} type='submit'>{props.buttonText}</button>
+        <button  type='submit'>{props.buttonText}</button>
       </form>
     </React.Fragment>
   );

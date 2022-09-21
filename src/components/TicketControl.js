@@ -15,6 +15,21 @@ import {
 } from 'firebase/firestore';
 import { db, auth } from './../firebase.js';
 import { formatDistanceToNow } from 'date-fns';
+import styled from 'styled-components';
+
+const StyledButton = styled.button`
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  color: turquoise;
+  font-family: Dangrek;
+  font-size: 30pt;
+  &: hover {
+    color: black;
+    cursor: pointer;
+  }
+`;
+
 
 
 function TicketControl() {
@@ -113,24 +128,11 @@ function TicketControl() {
     setSelectedTicket(selection);
   }
 
-  let currentlyVisibleState = null;
-  let buttonText = null;
-
-const styledButton = {
-  backgroundColor: 'Transparent',
-  backgroundRepeat: 'no-repeat',
-  border: 'none',    
-  color: 'turquoise',
-  fontFamily: 'Dangrek',
-  fontSize: '30pt',
-
-}
-
   if (auth.currentUser == null) {
 
     return (
       <React.Fragment>
-        <h1>You must be signed in to access the queue.</h1>
+        <h3>You must be signed in to access the queue.</h3>
       </React.Fragment>
     );
   } else if (auth.currentUser != null) {
@@ -146,7 +148,7 @@ const styledButton = {
           onEditTicket={handleEditingTicketInList}
         />
       )
-      buttonText = 'Return to Ticket List';
+      buttonText = 'Return to Orders';
     } else if (selectedTicket != null) {
       currentlyVisibleState = (
         <TicketDetail
@@ -155,12 +157,12 @@ const styledButton = {
           onClickingEdit={handleEditClick}
         />
       )
-      buttonText = 'Return to Ticket List';
+      buttonText = 'Order List';
     } else if (formVisibleOnPage) {
       currentlyVisibleState = (
         <NewTicketForm onNewTicketCreation={handleAddingNewTicketToList} />
       )
-      buttonText = 'Return to Ticket List';
+      buttonText = 'Order List';
     } else {
       currentlyVisibleState = (
         <TicketList
@@ -168,12 +170,14 @@ const styledButton = {
           ticketList={mainTicketList}
         />
       )
-      buttonText = 'Add Ticket';
+      buttonText = 'Start New Order';
     }
     return (
       <React.Fragment>
+        
         {currentlyVisibleState}
-        {error ? null : <button style={styledButton} onClick={handleClick}>{buttonText}</button>}
+        {error ? null :  <StyledButton onClick={handleClick}>{buttonText}</StyledButton>}
+ 
       </React.Fragment>
     );
   }
