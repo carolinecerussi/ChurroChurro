@@ -5,6 +5,8 @@ import styled from 'styled-components';
 const HelpQueueHeader = styled.p`
   font-size: 1.6rem;
   font-weight: 800;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
 `;
 
 const MainHeader = styled.header`
@@ -28,7 +30,7 @@ function Header() {
   return (
     <MainHeader>
       <React.Fragment>
-        <HelpQueueHeader>Help Queue</HelpQueueHeader>
+        <HelpQueueHeader>Snack City</HelpQueueHeader>
         <MenuList>
           <MenuListItem>
             <Link to='/'>Home</Link>

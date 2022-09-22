@@ -12,7 +12,6 @@ function TicketDetail(props){
       <p><em>{ticket.issue}</em></p>
       <button onClick={onClickingEdit}>Update Ticket</button>
       <button onClick={()=> onClickingDelete(ticket.id)}>Close Ticket</button>
-      <hr/>
     </React.Fragment>
   );
 }

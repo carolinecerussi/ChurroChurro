@@ -15,6 +15,15 @@ import {
 } from 'firebase/firestore';
 import { db, auth } from './../firebase.js';
 import { formatDistanceToNow } from 'date-fns';
+import styled from 'styled-components';
+
+const AddTicketButton = styled.button`
+  width: fit-content;
+  margin-right: 2rem;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  float: right;
+`;
 
 function TicketControl() {
   const [formVisibleOnPage, setFormVisibleOnPage] = useState(false);
@@ -157,8 +166,10 @@ function TicketControl() {
     }
     return (
       <React.Fragment>
+        {error ? null : (
+          <AddTicketButton onClick={handleClick}>{buttonText}</AddTicketButton>
+        )}
         {currentlyVisibleState}
-        {error ? null : <button onClick={handleClick}>{buttonText}</button>}
       </React.Fragment>
     );
   }

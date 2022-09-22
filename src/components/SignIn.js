@@ -53,9 +53,7 @@ function SignIn() {
 
   return (
     <React.Fragment>
-      {/* Signup form lives here */}
       <h1>Sign up</h1>
-      {/* New code below! */}
       {signUpSuccess}
       <form onSubmit={doSignUp}>
         <input type='text' name='email' placeholder='email' />
@@ -63,14 +61,12 @@ function SignIn() {
         <button type='submit'>Sign up</button>
       </form>
       <h1>Sign In</h1>
-      {/* New sign in success message*/}
       {signInSuccess}
       <form onSubmit={doSignIn}>
         <input type='text' name='signinEmail' placeholder='email' />
         <input type='password' name='signinPassword' placeholder='Password' />
         <button type='submit'>Sign in</button>
       </form>
-      {/* New sign out button*/}
       <h1>Sign Out</h1>
       {signOutSuccess}
       <br />

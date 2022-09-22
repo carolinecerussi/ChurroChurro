@@ -1,22 +1,41 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+const SnackObject = styled.div`
+  margin: 2rem auto;
+  padding: 1rem;
+  max-width: 600px;
+  border: 1.2px solid rgba(59, 108, 59, 1);
+  border-radius: 8px;
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+const SnackCopy = styled.p`
+  margin-bottom: 1rem;
+  font-size: 1rem;
+`;
+
+const SnackWaitTime = styled.p`
+  margin-top: 1rem;
+  font-style: italic;
+  text-align: right;
+`;
 
 function Ticket(props) {
   return (
-    <React.Fragment>
+    <SnackObject>
       <div onClick={() => props.whenTicketClicked(props.id)}>
-        <h3>
-          {props.location} - {props.names}
-        </h3>
-        <p>
-          <em>{props.issue}</em>
-        </p>
-        <p>
-          <em>{props.formattedWaitTime}</em>
-        </p>
-        <hr />
+        <h1>{props.names}</h1>
+        <h2>Origin</h2>
+        <SnackCopy>{props.location}</SnackCopy>
+        <h2>Description</h2>
+        <SnackCopy>{props.issue}</SnackCopy>
+        <SnackWaitTime>Snack Added: {props.formattedWaitTime}</SnackWaitTime>
       </div>
-    </React.Fragment>
+    </SnackObject>
   );
 }
 
