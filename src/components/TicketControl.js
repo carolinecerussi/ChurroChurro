@@ -18,11 +18,14 @@ import { formatDistanceToNow } from 'date-fns';
 import styled from 'styled-components';
 
 const AddTicketButton = styled.button`
+  position: fixed;
+  bottom: 0;
+  right: 0;
   width: fit-content;
+  margin-bottom: 2rem;
   margin-right: 2rem;
   padding: 1rem 2rem;
   font-size: 1rem;
-  float: right;
 `;
 
 function TicketControl() {
@@ -166,10 +169,10 @@ function TicketControl() {
     }
     return (
       <React.Fragment>
+        {currentlyVisibleState}
         {error ? null : (
           <AddTicketButton onClick={handleClick}>{buttonText}</AddTicketButton>
         )}
-        {currentlyVisibleState}
       </React.Fragment>
     );
   }

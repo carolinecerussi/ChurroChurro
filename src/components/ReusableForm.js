@@ -1,24 +1,29 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
+const FormContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
+`;
+
+const SubmitSnackButton = styled.button`
+  margin-left: 0;
+  margin-right: 0;
+`;
 
 function ReusableForm(props) {
   return (
-    <React.Fragment>
+    <FormContainer>
       <form onSubmit={props.formSubmissionHandler}>
-        <input
-          type='text'
-          name='names'
-          placeholder='Pair Names' />
-        <input
-          type='text'
-          name='location'
-          placeholder='Location' />
-        <textarea
-          name='issue'
-          placeholder='Describe your issue.' />
-        <button type='submit'>{props.buttonText}</button>
+        <input type='text' name='names' placeholder='Pair Names' />
+        <input type='text' name='location' placeholder='Location' />
+        <textarea name='issue' placeholder='Describe your issue.' />
+        <SubmitSnackButton type='submit'>{props.buttonText}</SubmitSnackButton>
       </form>
-    </React.Fragment>
+    </FormContainer>
   );
 }
 

@@ -5,6 +5,30 @@ import {
   signInWithEmailAndPassword,
   signOut
 } from 'firebase/auth';
+import styled from 'styled-components';
+
+const AccountOptionsContainer = styled.div`
+  margin: 2rem auto;
+  padding: 1rem;
+  max-width: 600px;
+  border-radius: 8px;
+`;
+
+const AccountOptionBlock = styled.form`
+  margin: 1rem 1rem 2rem 1rem;
+`;
+
+const AccountOptionsButton = styled.button`
+  margin-left: 0;
+  margin-right: 0;
+`;
+
+const SignOutButton = styled.button`
+  margin-left: 0;
+  margin-right: 0;
+  background-color: rgba(186, 41, 34, 1);
+  padding: .5rem 2rem;
+`;
 
 function SignIn() {
   const [signUpSuccess, setSignUpSuccess] = useState(null);
@@ -52,26 +76,26 @@ function SignIn() {
   }
 
   return (
-    <React.Fragment>
+    <AccountOptionsContainer>
       <h1>Sign up</h1>
       {signUpSuccess}
-      <form onSubmit={doSignUp}>
+      <AccountOptionBlock onSubmit={doSignUp}>
         <input type='text' name='email' placeholder='email' />
         <input type='password' name='password' placeholder='Password' />
-        <button type='submit'>Sign up</button>
-      </form>
+        <AccountOptionsButton type='submit'>Sign up</AccountOptionsButton>
+      </AccountOptionBlock>
       <h1>Sign In</h1>
       {signInSuccess}
-      <form onSubmit={doSignIn}>
+      <AccountOptionBlock onSubmit={doSignIn}>
         <input type='text' name='signinEmail' placeholder='email' />
         <input type='password' name='signinPassword' placeholder='Password' />
-        <button type='submit'>Sign in</button>
-      </form>
+        <AccountOptionsButton type='submit'>Sign in</AccountOptionsButton>
+      </AccountOptionBlock>
       <h1>Sign Out</h1>
       {signOutSuccess}
       <br />
-      <button onClick={doSignOut}>Sign out</button>
-    </React.Fragment>
+      <SignOutButton onClick={doSignOut}>Sign out</SignOutButton>
+    </AccountOptionsContainer>
   );
 }
 

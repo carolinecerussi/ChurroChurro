@@ -42,3 +42,21 @@ button {
   border-radius: 4px;
   background-color: rgba(59, 108, 59, 1);
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+  padding: 1rem;
+  max-width: 600px;
+  border: 1.2px solid rgba(59, 108, 59, 1);
+  border-radius: 8px;
+}
+
+input,
+textarea {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
