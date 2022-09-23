@@ -69,8 +69,8 @@ function TicketControl() {
             .toDate();
           const jsDate = new Date(timeOpen);
           tickets.push({
-            names: doc.data().names,
-            location: doc.data().location,
+            name: doc.data().name,
+            origin: doc.data().origin,
             issue: doc.data().issue,
             timeOpen: jsDate,
             formattedWaitTime: formatDistanceToNow(jsDate),
@@ -143,7 +143,7 @@ function TicketControl() {
           onEditTicket={handleEditingTicketInList}
         />
       );
-      buttonText = 'Return to Ticket List';
+      buttonText = 'Return to Snack List';
     } else if (selectedTicket != null) {
       currentlyVisibleState = (
         <TicketDetail
@@ -152,12 +152,12 @@ function TicketControl() {
           onClickingEdit={handleEditClick}
         />
       );
-      buttonText = 'Return to Ticket List';
+      buttonText = 'Return to Snack List';
     } else if (formVisibleOnPage) {
       currentlyVisibleState = (
         <NewTicketForm onNewTicketCreation={handleAddingNewTicketToList} />
       );
-      buttonText = 'Return to Ticket List';
+      buttonText = 'Return to Snack List';
     } else {
       currentlyVisibleState = (
         <TicketList
@@ -165,7 +165,7 @@ function TicketControl() {
           ticketList={mainTicketList}
         />
       );
-      buttonText = 'Add Ticket';
+      buttonText = 'Add Snack';
     }
     return (
       <React.Fragment>

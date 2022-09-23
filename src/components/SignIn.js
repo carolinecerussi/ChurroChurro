@@ -24,7 +24,7 @@ const AccountOptionsButton = styled.button`
 `;
 
 const SignOutButton = styled.button`
-  margin-left: 0;
+  margin-left: 2rem;
   margin-right: 0;
   background-color: rgba(186, 41, 34, 1);
   padding: .5rem 2rem;
@@ -80,14 +80,14 @@ function SignIn() {
       <h1>Sign up</h1>
       {signUpSuccess}
       <AccountOptionBlock onSubmit={doSignUp}>
-        <input type='text' name='email' placeholder='email' />
+        <input type='text' name='email' placeholder='Email' />
         <input type='password' name='password' placeholder='Password' />
         <AccountOptionsButton type='submit'>Sign up</AccountOptionsButton>
       </AccountOptionBlock>
       <h1>Sign In</h1>
       {signInSuccess}
       <AccountOptionBlock onSubmit={doSignIn}>
-        <input type='text' name='signinEmail' placeholder='email' />
+        <input type='text' name='signinEmail' placeholder='Email' />
         <input type='password' name='signinPassword' placeholder='Password' />
         <AccountOptionsButton type='submit'>Sign in</AccountOptionsButton>
       </AccountOptionBlock>

@@ -18,9 +18,9 @@ function ReusableForm(props) {
   return (
     <FormContainer>
       <form onSubmit={props.formSubmissionHandler}>
-        <input type='text' name='names' placeholder='Pair Names' />
-        <input type='text' name='location' placeholder='Location' />
-        <textarea name='issue' placeholder='Describe your issue.' />
+        <input type='text' name='name' placeholder='Snack name' />
+        <input type='text' name='origin' placeholder='Snack origin' />
+        <textarea name='issue' placeholder='Snack description' />
         <SubmitSnackButton type='submit'>{props.buttonText}</SubmitSnackButton>
       </form>
     </FormContainer>

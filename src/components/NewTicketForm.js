@@ -1,26 +1,25 @@
-import React from "react";
-import PropTypes from "prop-types"; 
-import ReusableForm from "./ReusableForm";
-import { serverTimestamp } from "firebase/firestore";
+import React from 'react';
+import PropTypes from 'prop-types';
+import ReusableForm from './ReusableForm';
+import { serverTimestamp } from 'firebase/firestore';
 
-
-function NewTicketForm(props){
-
+function NewTicketForm(props) {
   function handleNewTicketFormSubmission(event) {
     event.preventDefault();
     props.onNewTicketCreation({
-      names: event.target.names.value, 
-      location: event.target.location.value, 
-      issue: event.target.issue.value, 
+      name: event.target.name.value,
+      origin: event.target.origin.value,
+      issue: event.target.issue.value,
       timeOpen: serverTimestamp()
     });
   }
 
   return (
     <React.Fragment>
-      <ReusableForm 
+      <ReusableForm
         formSubmissionHandler={handleNewTicketFormSubmission}
-        buttonText="Help!" />
+        buttonText='Add New Snack'
+      />
     </React.Fragment>
   );
 }
