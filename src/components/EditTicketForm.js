@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { Component } from "react";
 import ReusableForm from "./ReusableForm";
 import PropTypes from "prop-types";
@@ -22,11 +21,6 @@ const UpdateButton = styled.button`
 
 `;
 
-=======
-import React from 'react';
-import ReusableForm from './ReusableForm';
-import PropTypes from 'prop-types';
->>>>>>> 12311e407b27139b234d304012caa87e74aae6f3
 
 function EditTicketForm(props) {
   const { ticket } = props;
@@ -43,17 +37,10 @@ function EditTicketForm(props) {
 
   return (
     <React.Fragment>
-<<<<<<< HEAD
       <Header />
       <ReusableForm 
         formSubmissionHandler={handleEditTicketFormSubmission} 
         buttonText= {<UpdateButton>Update Order</UpdateButton>}/>
-=======
-      <ReusableForm
-        formSubmissionHandler={handleEditTicketFormSubmission}
-        buttonText='Update Ticket'
-      />
->>>>>>> 12311e407b27139b234d304012caa87e74aae6f3
     </React.Fragment>
   );
 }

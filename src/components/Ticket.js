@@ -2,25 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-<<<<<<< HEAD
-const TicketStyle = styled.div`
-  font-size: 20pt;
-  padding-vertical: 6;
-  background-color: orange;
-  border-radius: 50%;
-  text-align: center;
-  margin-horizontal: 1%;
-  width: 80%;
-  margin-bottom: 6;
-  color: black;
-  align-self: flex-start;
-
-  font-family: dangrek;
-  `;
-
-
-
-=======
 const SnackObject = styled.div`
   margin: 2rem;
   padding: 2rem;
@@ -47,27 +28,10 @@ const SnackWaitTime = styled.p`
   font-style: italic;
   text-align: right;
 `;
->>>>>>> 12311e407b27139b234d304012caa87e74aae6f3
 
 function Ticket(props) {
 
   return (
-<<<<<<< HEAD
-
-     <TicketStyle onClick={() => props.whenTicketClicked(props.id)}>
-        <h3>
-          {props.location} - {props.names}
-        </h3>
-        <p>
-          <em>{props.issue}</em>
-        </p>
-        <p>
-          <em>{props.formattedWaitTime}</em>
-        </p>
-        <hr />
-    </TicketStyle>
-
-=======
     <SnackObject>
       <div onClick={() => props.whenTicketClicked(props.id)}>
         <h1>{props.name}</h1>
@@ -80,7 +44,6 @@ function Ticket(props) {
         </SnackWaitTime>
       </div>
     </SnackObject>
->>>>>>> 12311e407b27139b234d304012caa87e74aae6f3
   );
 }
 
