@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-const MainHeader = styled.header`
+
+const MainFooter = styled.footer`
   display: flex;
   font-family: 'roboto';
   align-items: baseline;
@@ -10,18 +11,15 @@ const MainHeader = styled.header`
   margin-bottom: 3rem;
   padding: 1rem 1rem;
   width: 100%;
-  border-bottom: 3px solid yellow;
+  border-top: 2px solid red;
+	background-color: white;
+	font-size: 20pt;
+
 `;
 
-const BrandWordmark = styled.p`
-  font-size: 4rem;
-  font-weight: 800;
-  font-family: 'gemini moon', sans-serif;
-  text-transform: uppercase;
-`;
+
 
 const MenuList = styled.ul`
-color: red;
   list-style: none;
 
 `;
@@ -31,22 +29,21 @@ const MenuListItem = styled.li`
 
 `;
 
-function Header() {
+function Footer() {
   return (
-    <MainHeader>
+		<MainFooter> 
       <React.Fragment>
-        <BrandWordmark>Churro Churro</BrandWordmark>
         <MenuList>
           <MenuListItem>
-            <Link to='/'>Home</Link>
+            <Link to='/about'>About</Link>
           </MenuListItem>
           <MenuListItem>
-            <Link to='/sign-in'>Sign In</Link>
+            <Link to='/account'>Account</Link>
           </MenuListItem>
         </MenuList>
       </React.Fragment>
-    </MainHeader>
+			</MainFooter>
   );
 }
 
-export default Header;
+export default Footer;

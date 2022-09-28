@@ -3,7 +3,7 @@ import TicketControl from "./TicketControl";
 import SignIn from "./SignIn";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./Header";
-
+import Footer from "./Footer";
 function App(){
   return ( 
     <Router>
@@ -12,6 +12,7 @@ function App(){
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/" element={<TicketControl />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }

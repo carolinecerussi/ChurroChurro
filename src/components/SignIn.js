@@ -1,19 +1,13 @@
-
-
-import React, { useState } from 'react';
-import { auth } from './../firebase.js';
+import React, { useState } from "react";
+import { auth } from "./../firebase.js";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  signOut
-} from 'firebase/auth';
-import styled from 'styled-components';
-<<<<<<< HEAD
-import Header from './Header.js';
-=======
->>>>>>> 12311e407b27139b234d304012caa87e74aae6f3
+  signOut,
+} from "firebase/auth";
+import styled from "styled-components";
 
-const AccountOptionsContainer = styled.div`
+const AccountOptionsContainer = styled.input`
   margin: 2rem auto;
   padding: 1rem;
   max-width: 600px;
@@ -24,9 +18,7 @@ const AccountOptionBlock = styled.form`
   margin: 1rem 1rem 2rem 1rem;
 `;
 
-<<<<<<< HEAD
-
-const Button = styled.button`
+const ClickStyleButton = styled.button`
   background-color: transparent;
   background-repeat: no-repeat;
   border: none;
@@ -37,18 +29,6 @@ const Button = styled.button`
     color: pink;
     cursor: pointer;
   }
-=======
-const AccountOptionsButton = styled.button`
-  margin-left: 0;
-  margin-right: 0;
-`;
-
-const SignOutButton = styled.button`
-  margin-left: 2rem;
-  margin-right: 0;
-  background-color: rgba(186, 41, 34, 1);
-  padding: .5rem 2rem;
->>>>>>> 12311e407b27139b234d304012caa87e74aae6f3
 `;
 
 function SignIn() {
@@ -61,12 +41,12 @@ function SignIn() {
     const email = event.target.email.value;
     const password = event.target.password.value;
     createUserWithEmailAndPassword(auth, email, password)
-      .then(userCredential => {
+      .then((userCredential) => {
         setSignUpSuccess(
           `You've successfully signed up, ${userCredential.user.email}!`
         );
       })
-      .catch(error => {
+      .catch((error) => {
         setSignUpSuccess(`There was an error signing up: ${error.message}!`);
       });
   }
@@ -76,12 +56,12 @@ function SignIn() {
     const email = event.target.signinEmail.value;
     const password = event.target.signinPassword.value;
     signInWithEmailAndPassword(auth, email, password)
-      .then(userCredential => {
+      .then((userCredential) => {
         setSignInSuccess(
           `You've successfully signed in as ${userCredential.user.email}!`
         );
       })
-      .catch(error => {
+      .catch((error) => {
         setSignInSuccess(`There was an error signing in: ${error.message}!`);
       });
   }
@@ -89,7 +69,7 @@ function SignIn() {
   function doSignOut() {
     signOut(auth)
       .then(function () {
-        setSignOutSuccess('You have successfully signed out!');
+        setSignOutSuccess("You have successfully signed out!");
       })
       .catch(function (error) {
         setSignOutSuccess(`There was an error signing out: ${error.message}!`);
@@ -97,62 +77,30 @@ function SignIn() {
   }
 
   return (
-<<<<<<< HEAD
-
     <AccountOptionsContainer>
-    <Header />
       <h1>up</h1>
-=======
-    <AccountOptionsContainer>
-      <h1>Sign up</h1>
->>>>>>> 12311e407b27139b234d304012caa87e74aae6f3
       {signUpSuccess}
       <AccountOptionBlock onSubmit={doSignUp}>
-        <input type='text' name='email' placeholder='Email' />
-        <input type='password' name='password' placeholder='Password' />
-<<<<<<< HEAD
-        <Button type='submit'>Sign up</Button>
+        <input type="text" name="email" placeholder="Email" />
+        <input type="password" name="password" placeholder="Password" />
+        <ClickStyleButton type="submit">Sign up</ClickStyleButton>
       </AccountOptionBlock>
       <h1> In</h1>
-=======
-        <AccountOptionsButton type='submit'>Sign up</AccountOptionsButton>
-      </AccountOptionBlock>
-      <h1>Sign In</h1>
->>>>>>> 12311e407b27139b234d304012caa87e74aae6f3
       {signInSuccess}
       <AccountOptionBlock onSubmit={doSignIn}>
-        <input type='text' name='signinEmail' placeholder='Email' />
-        <input type='password' name='signinPassword' placeholder='Password' />
-<<<<<<< HEAD
-        <Button type='submit'>Sign in</Button>
+        <input type="text" name="signinEmail" placeholder="Email" />
+        <input type="password" name="signinPassword" placeholder="Password" />
+        <ClickStyleButton type="submit">Sign in</ClickStyleButton>
       </AccountOptionBlock>
       <h1> Out</h1>
       {signOutSuccess}
       <br />
-      <Button onClick={doSignOut}>Sign out</Button>
-=======
-        <AccountOptionsButton type='submit'>Sign in</AccountOptionsButton>
-      </AccountOptionBlock>
-      <h1>Sign Out</h1>
-      {signOutSuccess}
-      <br />
-      <SignOutButton onClick={doSignOut}>Sign out</SignOutButton>
->>>>>>> 12311e407b27139b234d304012caa87e74aae6f3
+      <ClickStyleButton onClick={doSignOut}>Sign out</ClickStyleButton>
     </AccountOptionsContainer>
   );
 }
 
 export default SignIn;
-
-
-
-
-
-
-
-
-
-
 
 // import React, { useState } from 'react';
 // import { auth } from './../firebase.js';
@@ -170,8 +118,6 @@ export default SignIn;
 //     text-align: left;
 //     `;
 
-
-
 //   function SignIn(event) {
 //     event.preventDefault();
 //     const email = event.target.signinEmail.value;
@@ -186,9 +132,9 @@ export default SignIn;
 //       .catch(error => {
 //         setSignInSuccess(`There was an error signing in: ${error.message}!`);
 //       });
-  
+
 //   return (
-  
+
 //    <SignInStyle>
 //    <Router>
 //     <Routes>
@@ -198,7 +144,6 @@ export default SignIn;
 
 // <h1>SIGN</h1>
 // <h1>IN</h1>
-
 
 //       {/* New sign in success message*/}
 //       {signInSuccess}
@@ -210,7 +155,6 @@ export default SignIn;
 
 //       </Router>
 // </SignInStyle>
-
 
 //   )}
 

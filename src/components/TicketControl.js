@@ -17,7 +17,6 @@ import { db, auth } from './../firebase.js';
 import { formatDistanceToNow } from 'date-fns';
 import styled from 'styled-components';
 
-<<<<<<< HEAD
 const StyledButton = styled.button`
   background-color: transparent;
   background-repeat: no-repeat;
@@ -30,20 +29,6 @@ const StyledButton = styled.button`
     cursor: pointer;
   }
 `;
-
-
-=======
-const AddTicketButton = styled.button`
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  width: fit-content;
-  margin-bottom: 2rem;
-  margin-right: 2rem;
-  padding: 1rem 2rem;
-  font-size: 1rem;
-`;
->>>>>>> 12311e407b27139b234d304012caa87e74aae6f3
 
 function TicketControl() {
   const [formVisibleOnPage, setFormVisibleOnPage] = useState(false);
@@ -139,11 +124,7 @@ function TicketControl() {
   const handleChangingSelectedTicket = id => {
     const selection = mainTicketList.filter(ticket => ticket.id === id)[0];
     setSelectedTicket(selection);
-<<<<<<< HEAD
   }
-=======
-  };
->>>>>>> 12311e407b27139b234d304012caa87e74aae6f3
 
   if (auth.currentUser == null) {
 
@@ -164,13 +145,8 @@ function TicketControl() {
           ticket={selectedTicket}
           onEditTicket={handleEditingTicketInList}
         />
-<<<<<<< HEAD
-      )
-      buttonText = 'Return to Orders';
-=======
       );
-      buttonText = 'Return to Snack List';
->>>>>>> 12311e407b27139b234d304012caa87e74aae6f3
+      buttonText = 'Return to Orders';
     } else if (selectedTicket != null) {
       currentlyVisibleState = (
         <TicketDetail
@@ -178,7 +154,6 @@ function TicketControl() {
           onClickingDelete={handleDeletingTicket}
           onClickingEdit={handleEditClick}
         />
-<<<<<<< HEAD
       )
       buttonText = 'Order List';
     } else if (formVisibleOnPage) {
@@ -186,41 +161,21 @@ function TicketControl() {
         <NewTicketForm onNewTicketCreation={handleAddingNewTicketToList} />
       )
       buttonText = 'Order List';
-=======
-      );
-      buttonText = 'Return to Snack List';
-    } else if (formVisibleOnPage) {
-      currentlyVisibleState = (
-        <NewTicketForm onNewTicketCreation={handleAddingNewTicketToList} />
-      );
-      buttonText = 'Return to Snack List';
->>>>>>> 12311e407b27139b234d304012caa87e74aae6f3
     } else {
       currentlyVisibleState = (
         <TicketList
           onTicketSelection={handleChangingSelectedTicket}
           ticketList={mainTicketList}
         />
-<<<<<<< HEAD
       )
       buttonText = 'Start New Order';
-=======
-      );
-      buttonText = 'Add Snack';
->>>>>>> 12311e407b27139b234d304012caa87e74aae6f3
     }
     return (
       <React.Fragment>
         
         {currentlyVisibleState}
-<<<<<<< HEAD
         {error ? null :  <StyledButton onClick={handleClick}>{buttonText}</StyledButton>}
  
-=======
-        {error ? null : (
-          <AddTicketButton onClick={handleClick}>{buttonText}</AddTicketButton>
-        )}
->>>>>>> 12311e407b27139b234d304012caa87e74aae6f3
       </React.Fragment>
     );
   }

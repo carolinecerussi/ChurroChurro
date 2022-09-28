@@ -5,12 +5,15 @@ import styled from 'styled-components';
 const SnackObject = styled.div`
   margin: 2rem;
   padding: 2rem;
-  width: 600px;
-  border-radius: 8px;
-  background-color: rgba(75, 75, 75, 1);
+  width: 50;
+  background-color:white;
+  border-color: blue;
+  border-width: 2pt;
+  font-family: 'roboto';
   &:hover {
     cursor: pointer;
     opacity: 0.8;
+
   }
   &:active {
     cursor: pointer;
@@ -26,14 +29,12 @@ const SnackCopy = styled.p`
 const SnackWaitTime = styled.p`
   margin-top: 1rem;
   font-style: italic;
-  text-align: right;
 `;
 
 function Ticket(props) {
 
   return (
-    <SnackObject>
-      <div onClick={() => props.whenTicketClicked(props.id)}>
+    <SnackObject onClick={() => props.whenTicketClicked(props.id)}>
         <h1>{props.name}</h1>
         <h2>Origin</h2>
         <SnackCopy>{props.origin}</SnackCopy>
@@ -42,7 +43,6 @@ function Ticket(props) {
         <SnackWaitTime>
           Snack Added: {props.formattedWaitTime} ago
         </SnackWaitTime>
-      </div>
     </SnackObject>
   );
 }

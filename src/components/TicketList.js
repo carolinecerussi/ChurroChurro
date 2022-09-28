@@ -1,17 +1,6 @@
 import React from 'react';
 import Ticket from './Ticket';
 import PropTypes from 'prop-types';
-<<<<<<< HEAD
-import Header from './Header';
-
-
-function TicketList(props) {
-  return (
-
-    <React.Fragment>
-    <Header />
-      <hr />
-=======
 import styled from 'styled-components';
 
 const SnackListContainer = styled.div`
@@ -24,7 +13,6 @@ const SnackListContainer = styled.div`
 function TicketList(props) {
   return (
     <SnackListContainer>
->>>>>>> 12311e407b27139b234d304012caa87e74aae6f3
       {props.ticketList.map(ticket => (
         <Ticket
           whenTicketClicked={props.onTicketSelection}
