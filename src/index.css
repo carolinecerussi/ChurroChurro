@@ -4,15 +4,12 @@ body {
   margin: 20pt;
   text-align: center;
   background-color: rgb(255, 255, 255);
-  font-family: 'Dangrek', sans-serif;
+  font-family: 'gemini_moon', sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'helvetica',
     monospace;
 }
 
-ticketList {
-  color: red,
-}

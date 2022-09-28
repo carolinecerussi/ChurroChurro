@@ -1,6 +1,26 @@
-import React from "react";
+import React, { Component } from "react";
 import ReusableForm from "./ReusableForm";
 import PropTypes from "prop-types";
+import styled from "styled-components";
+import Header from "./Header";
+
+const UpdateButton = styled.button`
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  padding: 1rem 1rem;
+  font-family: tahoma;
+  font-size: 20pt;
+  color: black;
+  background-color: transparent;
+  border: none;
+  hover {
+    color: pink;
+  }
+  }
+
+`;
+
 
 function EditTicketForm (props) {
   const { ticket } = props;
@@ -17,9 +37,10 @@ function EditTicketForm (props) {
 
   return (
     <React.Fragment>
+      <Header />
       <ReusableForm 
         formSubmissionHandler={handleEditTicketFormSubmission} 
-        buttonText="Update Ticket" />
+        buttonText= {<UpdateButton>Update Order</UpdateButton>}/>
     </React.Fragment>
   );
 }

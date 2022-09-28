@@ -1,34 +1,48 @@
-
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-function Header(){
+const MainHeader = styled.header`
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  padding: 1rem 1rem;
+  border-bottom: 2px solid #eee;
+`;
 
+const BrandWordmark = styled.p`
+  font-size: 1.6rem;
+  font-weight: 800;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+`;
 
+const MenuList = styled.ul`
+  display: flex;
+  list-style: none;
+`;
 
-  const HeadingStyle = styled.h1`
-    color: aliceblue;
-    background-color: transparent;
-    font-family:  ;
-    font-size: 40pt;
-    `;
+const MenuListItem = styled.li`
+  margin-right: 1rem;
+`;
 
-
-
+function Header() {
   return (
- <HeadingStyle>
-       <Link to="/"> <h1>Churro World</h1></Link>
-      <ul>
-      <h />
-         <Link to="/orders">Orders</Link>
-         <span><p>Already a Member? <sp />
-         <Link to="/sign-in">Sign Up</Link></p></span>
-  
-         </ul>
-</HeadingStyle>
+    <MainHeader>
+      <React.Fragment>
+        <BrandWordmark>Snack City</BrandWordmark>
+        <MenuList>
+          <MenuListItem>
+            <Link to='/'>Home</Link>
+          </MenuListItem>
+          <MenuListItem>
+            <Link to='/sign-in'>Account</Link>
+          </MenuListItem>
+        </MenuList>
+      </React.Fragment>
+    </MainHeader>
   );
 }
-
 
 export default Header;

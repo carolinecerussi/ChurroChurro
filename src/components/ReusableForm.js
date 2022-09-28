@@ -10,7 +10,7 @@ function ReusableForm(props) {
   background-repeat: no-repeat;
   border: none;
   color: turquoise;
-  font-family: Dangrek;
+  font-family: Helvetica;
   font-size: 30pt;
   &: hover {
     color: black;
@@ -28,20 +28,20 @@ function ReusableForm(props) {
           placeholder='First, Last' />
            <br></br>
 
-      <label for="location">Location: </label>
+      <label for="location">Churro Flavor: </label>
         <input
-          type='text'
+          type='select'
           name='location'
-          placeholder='Seat Number' />
+          placeholder='Flavor ' />
           <br></br>
 
 
-          <label for="issue">Issue: </label>
+          <label for="issue">Special Requests: </label>
         <textarea
           name='issue'
-          placeholder='Describe.' />
+          placeholder='No Sauce, Extra Fried, etc...' />
           <br></br>
-        <button  type='submit'>{props.buttonText}</button>
+        <StyledButton type='submit' > {props.buttonText}</StyledButton>
       </form>
     </React.Fragment>
   );

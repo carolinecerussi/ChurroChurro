@@ -21,11 +21,11 @@ const StyledButton = styled.button`
   background-color: transparent;
   background-repeat: no-repeat;
   border: none;
-  color: turquoise;
-  font-family: Dangrek;
+  color: Lime;
+  font-family: Gemini moon;
   font-size: 30pt;
   &: hover {
-    color: black;
+    color: pink;
     cursor: pointer;
   }
 `;

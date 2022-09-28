@@ -1,3 +1,5 @@
+
+
 import React, { useState } from 'react';
 import { auth } from './../firebase.js';
 import {
@@ -6,19 +8,32 @@ import {
   signOut
 } from 'firebase/auth';
 import styled from 'styled-components';
-import Header from './Header';
+import Header from './Header.js';
 
-  const SignInStyle = styled.div`
-    color: aliceblue;
-    background-color: orange;
-    font-family: helvetica;
-    text-align: left;
-    `;
+const AccountOptionsContainer = styled.div`
+  margin: 2rem auto;
+  padding: 1rem;
+  max-width: 600px;
+  border-radius: 8px;
+`;
+
+const AccountOptionBlock = styled.form`
+  margin: 1rem 1rem 2rem 1rem;
+`;
 
 
-
-
-
+const Button = styled.button`
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  color: Lime;
+  font-family: Gemini moon;
+  font-size: 30pt;
+  &: hover {
+    color: pink;
+    cursor: pointer;
+  }
+`;
 
 function SignIn() {
   const [signUpSuccess, setSignUpSuccess] = useState(null);
@@ -66,38 +81,101 @@ function SignIn() {
   }
 
   return (
-   <SignInStyle>
+
+    <AccountOptionsContainer>
     <Header />
-<h1>SIGN</h1>
-<h1>UP</h1>
-<h1>IN</h1>
-<h1>OUT</h1>
-
-
-      {/* Signup form lives here */}
-      <h3>Sign up</h3>
-      {/* New code below! */}
+      <h1>up</h1>
       {signUpSuccess}
-      <form onSubmit={doSignUp}>
-        <input type='text' name='email' placeholder='email' />
+      <AccountOptionBlock onSubmit={doSignUp}>
+        <input type='text' name='email' placeholder='Email' />
         <input type='password' name='password' placeholder='Password' />
-        <button type='submit'>Sign up</button>
-      </form>
-      <h3>Sign In</h3>
-      {/* New sign in success message*/}
+        <Button type='submit'>Sign up</Button>
+      </AccountOptionBlock>
+      <h1> In</h1>
       {signInSuccess}
-      <form onSubmit={doSignIn}>
-        <input type='text' name='signinEmail' placeholder='email' />
+      <AccountOptionBlock onSubmit={doSignIn}>
+        <input type='text' name='signinEmail' placeholder='Email' />
         <input type='password' name='signinPassword' placeholder='Password' />
-        <button type='submit'>Sign in</button>
-      </form>
-      {/* New sign out button*/}
-      <h3>Sign Out</h3>
+        <Button type='submit'>Sign in</Button>
+      </AccountOptionBlock>
+      <h1> Out</h1>
       {signOutSuccess}
       <br />
-      <button onClick={doSignOut}>Sign out</button>
-</SignInStyle>
+      <Button onClick={doSignOut}>Sign out</Button>
+    </AccountOptionsContainer>
   );
 }
 
 export default SignIn;
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState } from 'react';
+// import { auth } from './../firebase.js';
+// import {
+//   signInWithEmailAndPassword,
+// } from 'firebase/auth';
+// import styled from 'styled-components';
+// import Header from './Header';
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+//   const SignInStyle = styled.div`
+//     color: aliceblue;
+//     background-color: orange;
+//     font-family: gemini moon;
+//     text-align: left;
+//     `;
+
+
+
+//   function SignIn(event) {
+//     event.preventDefault();
+//     const email = event.target.signinEmail.value;
+//     const password = event.target.signinPassword.value;
+//     const [signInSuccess, setSignInSuccess] = useState(null);
+//     signInWithEmailAndPassword(auth, email, password)
+//       .then(userCredential => {
+//         setSignInSuccess(
+//           `Welcome back, ${userCredential.user.name}!`
+//         );
+//       })
+//       .catch(error => {
+//         setSignInSuccess(`There was an error signing in: ${error.message}!`);
+//       });
+  
+//   return (
+  
+//    <SignInStyle>
+//    <Router>
+//     <Routes>
+//    <Route path="/sign-in" element={<SignIn />} />
+//         <Route path="/" element={<Header />} />
+//       </Routes>
+
+// <h1>SIGN</h1>
+// <h1>IN</h1>
+
+
+//       {/* New sign in success message*/}
+//       {signInSuccess}
+//       <form onSubmit={SignIn}>
+//         <input type='text' name='signinEmail' placeholder='email' />
+//         <input type='password' name='signinPassword' placeholder='Password' />
+//         <button type='submit'>IN</button>
+//       </form>
+
+//       </Router>
+// </SignInStyle>
+
+
+//   )}
+
+// export default SignIn;
