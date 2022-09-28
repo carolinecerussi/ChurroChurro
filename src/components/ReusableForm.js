@@ -5,14 +5,18 @@ const StyledButton = styled.button`
 background-color: transparent;
 background-repeat: no-repeat;
 border: none;
-color: turquoise;
-font-family: Helvetica;
+color: red;
 font-size: 30pt;
 &: hover {
-  color: black;
+  color: blue;
   cursor: pointer;
 }
 `;
+const StyledInputLabel = styled.div `
+  background-color: white;
+  color: white;
+  `;
+
 
 
 
@@ -21,13 +25,24 @@ function ReusableForm(props) {
   
 
   return (
-      <form onSubmit={props.formSubmissionHandler}>
-        <input type='text' name='name' placeholder='Snack name' />
-        <input type='text' name='origin' placeholder='Snack origin' />
-        <textarea name='issue' placeholder='Snack description' />
-        <StyledButton type='submit'>{props.buttonText}</StyledButton>
-      </form>
-
+    <StyledInputLabel onSubmit={props.formSubmissionHandler}>
+        <h1>Order:</h1>
+        <h2>Customer Name:</h2>
+        <input type='text' name='name' placeholder='First, Last' />
+        <h2>Phone Number:</h2>
+        <input type='text' name='phonenumber' placeholder="Phone Number" />
+        <h2>Churro Flavor:</h2>
+        <select name='flavor' id='dropdown' value='Flavor'>
+          <option value='original'>Original (w/o cream) </option>
+          <option value='vanilla' > Vanilla Cream </option>
+          <option value='chocolate'>Chocolate Cream</option>
+          <option value='caramel'>Caramel Cream</option>
+          <option value='nutella'>Nutella Cream</option>
+          </select>
+        <h2>Special Requests:</h2>
+        <textarea name='request' placeholder='ie allergies, silverware ...' />
+        <button type='submit'>{props.buttonText}</button>
+      </StyledInputLabel>
   );
 }
 

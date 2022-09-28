@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const TicketObject = styled.div`
-  margin: 5rem auto;
+  margin: 2rem auto;
   padding: 2rem;
-  max-width: 600px;
-  border-radius: 8px;
-  background-color: rgba(75, 75, 75, 1);
+  max-width: 900px;
+  background-color:pink;
+
 `;
 
 const TicketNameTitle = styled.h2`
@@ -20,29 +20,27 @@ const SnackCopy = styled.p`
 `;
 
 const SnackDetailButton = styled.button`
-  margin-left: 0;
-`;
+  width: 40%;
+  text-align: center;
 
-const DeleteSnackButton = styled.button`
-  background-color: rgba(186, 41, 34, 1);
 `;
 
 function TicketDetail(props) {
   const { ticket, onClickingDelete, onClickingEdit } = props;
   return (
     <TicketObject>
-      <h1>Order</h1>
-      <TicketNameTitle>{ticket.name}</TicketNameTitle>
-      <h3>Origin</h3>
-      <SnackCopy>{ticket.origin}</SnackCopy>
-      <h3>Description</h3>
-      <SnackCopy>{ticket.issue}</SnackCopy>
+  
+      <TicketNameTitle>Order- {ticket.number} </TicketNameTitle>
+      <h2>Flavor:</h2>
+      <SnackCopy>{ticket.flavor}</SnackCopy>
+      <h2>Special Requests:</h2>
+      <SnackCopy>{ticket.request}</SnackCopy>
       <SnackDetailButton onClick={onClickingEdit}>
-        Update Ticket
+        Edit
       </SnackDetailButton>
-      <DeleteSnackButton onClick={() => onClickingDelete(ticket.id)}>
-        Delete Snack
-      </DeleteSnackButton>
+      <SnackDetailButton onClick={() => onClickingDelete(ticket.id)}>
+        Close 
+      </SnackDetailButton>
     </TicketObject>
   );
 }

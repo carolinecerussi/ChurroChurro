@@ -13,7 +13,7 @@ const MainFooter = styled.footer`
   width: 100%;
   border-top: 2px solid red;
 	background-color: white;
-	font-size: 20pt;
+	font-size: 30pt;
 
 `;
 

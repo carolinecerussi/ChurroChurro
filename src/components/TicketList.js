@@ -3,16 +3,17 @@ import Ticket from './Ticket';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const SnackListContainer = styled.div`
+const TicketListContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: space-evenly;
 `;
 
+
 function TicketList(props) {
   return (
-    <SnackListContainer>
+    <TicketListContainer>
       {props.ticketList.map(ticket => (
         <Ticket
           whenTicketClicked={props.onTicketSelection}
@@ -24,7 +25,7 @@ function TicketList(props) {
           key={ticket.id}
         />
       ))}
-    </SnackListContainer>
+    </TicketListContainer>
   );
 }
 

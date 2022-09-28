@@ -2,14 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const SnackObject = styled.div`
-  margin: 2rem;
-  padding: 2rem;
-  width: 50;
-  background-color:white;
-  border-color: blue;
-  border-width: 2pt;
-  font-family: 'roboto';
+const TicketObject = styled.div`
+  margin: 1rem;
+  padding: 1rem;
+  width: 90%;
+  background-color:transparent;
+  font-family: karla ;
   &:hover {
     cursor: pointer;
     opacity: 0.8;
@@ -21,29 +19,29 @@ const SnackObject = styled.div`
   }
 `;
 
-const SnackCopy = styled.p`
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
+const OrderCopy = styled.p`
+  font-size: karla;
+  color: white;
 `;
 
-const SnackWaitTime = styled.p`
-  margin-top: 1rem;
+const OrderWaitTime = styled.p`
+  font-family: karla;
   font-style: italic;
 `;
 
 function Ticket(props) {
 
   return (
-    <SnackObject onClick={() => props.whenTicketClicked(props.id)}>
-        <h1>{props.name}</h1>
-        <h2>Origin</h2>
-        <SnackCopy>{props.origin}</SnackCopy>
-        <h2>Description</h2>
-        <SnackCopy>{props.issue}</SnackCopy>
-        <SnackWaitTime>
-          Snack Added: {props.formattedWaitTime} ago
-        </SnackWaitTime>
-    </SnackObject>
+    <TicketObject onClick={() => props.whenTicketClicked(props.id)}>
+        <h1> Order {"number"} </h1>
+        <h2>{props.name}</h2>
+        <OrderCopy>{props.origin}</OrderCopy>
+        Status: Open
+        <OrderCopy>{props.issue}</OrderCopy>
+        <OrderWaitTime>
+           Ordered: {props.formattedWaitTime} ago
+        </OrderWaitTime>
+    </TicketObject>
   );
 }
 

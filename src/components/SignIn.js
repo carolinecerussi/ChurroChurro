@@ -7,26 +7,25 @@ import {
 } from "firebase/auth";
 import styled from "styled-components";
 
-const AccountOptionsContainer = styled.input`
-  margin: 2rem auto;
-  padding: 1rem;
-  max-width: 600px;
-  border-radius: 8px;
+const AccountOptionBlock = styled.input`
+color:red;
+margin: 10pt;
+font-size: 18pt;
+
 `;
 
-const AccountOptionBlock = styled.form`
-  margin: 1rem 1rem 2rem 1rem;
+const AccountFormStyle = styled.form`
+  margin: 2rem 2rem 2rem 2rem;
 `;
 
 const ClickStyleButton = styled.button`
   background-color: transparent;
-  background-repeat: no-repeat;
   border: none;
-  color: Lime;
+  color: red;
   font-family: Gemini moon;
-  font-size: 30pt;
+  font-size: 50pt;
   &: hover {
-    color: pink;
+    color: blue;
     cursor: pointer;
   }
 `;
@@ -77,26 +76,25 @@ function SignIn() {
   }
 
   return (
-    <AccountOptionsContainer>
-      <h1>up</h1>
-      {signUpSuccess}
-      <AccountOptionBlock onSubmit={doSignUp}>
-        <input type="text" name="email" placeholder="Email" />
-        <input type="password" name="password" placeholder="Password" />
-        <ClickStyleButton type="submit">Sign up</ClickStyleButton>
-      </AccountOptionBlock>
-      <h1> In</h1>
+    <React.Fragment>
       {signInSuccess}
-      <AccountOptionBlock onSubmit={doSignIn}>
-        <input type="text" name="signinEmail" placeholder="Email" />
-        <input type="password" name="signinPassword" placeholder="Password" />
-        <ClickStyleButton type="submit">Sign in</ClickStyleButton>
-      </AccountOptionBlock>
-      <h1> Out</h1>
+      <h1>Welcome Back.</h1>
+      <AccountFormStyle onSubmit={doSignIn}>
+        <AccountOptionBlock type="text" name="signinEmail" placeholder="Email" />
+        <AccountOptionBlock type="password" name="signinPassword" placeholder="Password" />
+        <ClickStyleButton type="submit">IN</ClickStyleButton>
+        </AccountFormStyle>
+      <h1>New Member?</h1>
+      {signUpSuccess}
+      <AccountFormStyle onSubmit={doSignUp}>
+        <AccountOptionBlock type="text" name="email" placeholder="Email" />
+        <AccountOptionBlock type="password" name="password" placeholder="Password" />
+        <ClickStyleButton type="submit">UP</ClickStyleButton>
+        </AccountFormStyle>
+      <h1>See Ya!</h1>
       {signOutSuccess}
-      <br />
-      <ClickStyleButton onClick={doSignOut}>Sign out</ClickStyleButton>
-    </AccountOptionsContainer>
+      <ClickStyleButton onClick={doSignOut}>Out</ClickStyleButton>
+    </React.Fragment>
   );
 }
 

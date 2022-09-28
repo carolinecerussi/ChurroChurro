@@ -7,9 +7,9 @@ function NewTicketForm(props) {
   function handleNewTicketFormSubmission(event) {
     event.preventDefault();
     props.onNewTicketCreation({
-      name: event.target.name.value,
-      origin: event.target.origin.value,
-      issue: event.target.issue.value,
+      number: event.target.number.value,
+      flavor: event.target.flavor.value,
+      request: event.target.request.value,
       timeOpen: serverTimestamp()
     });
   }
@@ -18,7 +18,7 @@ function NewTicketForm(props) {
     <React.Fragment>
       <ReusableForm
         formSubmissionHandler={handleNewTicketFormSubmission}
-        buttonText='Add New Snack'
+        buttonText='Order'
       />
     </React.Fragment>
   );

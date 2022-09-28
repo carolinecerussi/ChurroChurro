@@ -21,11 +21,12 @@ const StyledButton = styled.button`
   background-color: transparent;
   background-repeat: no-repeat;
   border: none;
-  color: Lime;
+  color: Gold;
   font-family: Gemini moon;
   font-size: 30pt;
+  margin: 20pt
   &: hover {
-    color: pink;
+    color: black;
     cursor: pointer;
   }
 `;
@@ -146,7 +147,7 @@ function TicketControl() {
           onEditTicket={handleEditingTicketInList}
         />
       );
-      buttonText = 'Return to Orders';
+      buttonText = 'Order List';
     } else if (selectedTicket != null) {
       currentlyVisibleState = (
         <TicketDetail
@@ -168,13 +169,13 @@ function TicketControl() {
           ticketList={mainTicketList}
         />
       )
-      buttonText = 'Start New Order';
+      buttonText = 'New Order';
     }
     return (
       <React.Fragment>
-        
-        {currentlyVisibleState}
         {error ? null :  <StyledButton onClick={handleClick}>{buttonText}</StyledButton>}
+        {currentlyVisibleState}
+        
  
       </React.Fragment>
     );

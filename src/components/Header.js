@@ -4,47 +4,39 @@ import styled from 'styled-components';
 
 const MainHeader = styled.header`
   display: flex;
-  font-family: 'roboto';
+  font-family: karla;
   align-items: baseline;
   justify-content: space-between;
-  margin-bottom: 3rem;
-  padding: 1rem 1rem;
-  width: 100%;
+  font-size: 20pt;
   border-bottom: 3px solid yellow;
 `;
 
 const BrandWordmark = styled.p`
-  font-size: 4rem;
-  font-weight: 800;
-  font-family: 'gemini moon', sans-serif;
+  font-size:90pt;
+  font-family: 'gemini moon';
   text-transform: uppercase;
 `;
 
 const MenuList = styled.ul`
-color: red;
   list-style: none;
 
 `;
 
 const MenuListItem = styled.li`
-  margin-right: 1rem;
+  text-align : right;
 
 `;
 
 function Header() {
   return (
     <MainHeader>
-      <React.Fragment>
         <BrandWordmark>Churro Churro</BrandWordmark>
         <MenuList>
           <MenuListItem>
             <Link to='/'>Home</Link>
-          </MenuListItem>
-          <MenuListItem>
+            </MenuListItem>            <br></br>
             <Link to='/sign-in'>Sign In</Link>
-          </MenuListItem>
         </MenuList>
-      </React.Fragment>
     </MainHeader>
   );
 }
