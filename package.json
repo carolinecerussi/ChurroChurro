@@ -12,7 +12,10 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.0",
     "react-scripts": "5.0.1",
+<<<<<<< HEAD
     "style-components": "^0.1.0",
+=======
+>>>>>>> 12311e407b27139b234d304012caa87e74aae6f3
     "styled-components": "^5.3.5",
     "web-vitals": "^2.1.4"
   },

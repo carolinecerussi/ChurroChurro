@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { Component } from "react";
 import ReusableForm from "./ReusableForm";
 import PropTypes from "prop-types";
@@ -21,26 +22,38 @@ const UpdateButton = styled.button`
 
 `;
 
+=======
+import React from 'react';
+import ReusableForm from './ReusableForm';
+import PropTypes from 'prop-types';
+>>>>>>> 12311e407b27139b234d304012caa87e74aae6f3
 
-function EditTicketForm (props) {
+function EditTicketForm(props) {
   const { ticket } = props;
 
   function handleEditTicketFormSubmission(event) {
     event.preventDefault();
     props.onEditTicket({
-      names: event.target.names.value, 
-      location: event.target.location.value, 
-      issue: event.target.issue.value, 
+      name: event.target.name.value,
+      origin: event.target.origin.value,
+      issue: event.target.issue.value,
       id: ticket.id
     });
   }
 
   return (
     <React.Fragment>
+<<<<<<< HEAD
       <Header />
       <ReusableForm 
         formSubmissionHandler={handleEditTicketFormSubmission} 
         buttonText= {<UpdateButton>Update Order</UpdateButton>}/>
+=======
+      <ReusableForm
+        formSubmissionHandler={handleEditTicketFormSubmission}
+        buttonText='Update Ticket'
+      />
+>>>>>>> 12311e407b27139b234d304012caa87e74aae6f3
     </React.Fragment>
   );
 }
