@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const TicketObject = styled.div`
-  margin: 1rem;
-  padding: 1rem;
-  width: 90%;
-  background-color:transparent;
+h1{
+  margin: .5 rem;
+  background-color: transparent;
   font-family: karla ;
+  color: black;
+  font-weight: 300;
+}
   &:hover {
     cursor: pointer;
     opacity: 0.8;
@@ -20,35 +22,38 @@ const TicketObject = styled.div`
 `;
 
 const OrderCopy = styled.p`
-  font-size: karla;
-  color: white;
+  font-family: karla;
+  color: black;
+  background-color: transparent;
 `;
 
 const OrderWaitTime = styled.p`
   font-family: karla;
   font-style: italic;
+  background-color: transparent;
+  
 `;
 
 function Ticket(props) {
 
   return (
     <TicketObject onClick={() => props.whenTicketClicked(props.id)}>
-        <h1> Order {"number"} </h1>
-        <h2>{props.name}</h2>
-        <OrderCopy>{props.origin}</OrderCopy>
-        Status: Open
-        <OrderCopy>{props.issue}</OrderCopy>
+        <h1> Order # {props.number} </h1>
+        <p>Status: Open</p>
         <OrderWaitTime>
-           Ordered: {props.formattedWaitTime} ago
+          {props.formattedWaitTime} ago
         </OrderWaitTime>
+        <OrderCopy>{props.flavor}</OrderCopy>
+        <OrderCopy>{props.request}</OrderCopy>
     </TicketObject>
   );
 }
 
 Ticket.propTypes = {
+  number: PropTypes.string,
   name: PropTypes.string,
-  origin: PropTypes.string,
-  issue: PropTypes.string,
+  phonenumber: PropTypes.string,
+  request: PropTypes.string,
   formattedWaitTime: PropTypes.string,
   id: PropTypes.string,
   whenTicketClicked: PropTypes.func

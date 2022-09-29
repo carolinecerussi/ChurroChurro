@@ -5,15 +5,15 @@ import styled from 'styled-components';
 
 const MainFooter = styled.footer`
   display: flex;
-  font-family: 'roboto';
   align-items: baseline;
   justify-content: space-between;
-  margin-bottom: 3rem;
+	margin-top: 20rem;
+  margin-bottom: 1rem;
   padding: 1rem 1rem;
   width: 100%;
   border-top: 2px solid red;
 	background-color: white;
-	font-size: 30pt;
+	font-size: 20pt;
 
 `;
 

@@ -3,44 +3,57 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const TicketObject = styled.div`
-  margin: 2rem auto;
-  padding: 2rem;
-  max-width: 900px;
-  background-color:pink;
+  margin: 1rem auto;
+  padding: 10pt;
+  max-width: 50%;
+  background: yellow;
 
 `;
 
 const TicketNameTitle = styled.h2`
   margin-bottom: 1rem;
+  font-size: 40pt;
+  font-family: karla;
+  font-weight: 250;
+  background-color: transparent;
+`;
+const TicketNameDetails= styled.h2`
+background-color:transparent;
+font-weight:250;
+margin: 10pt;
+font-size: 20pt;
 `;
 
-const SnackCopy = styled.p`
+const OrderDetailStyle = styled.h3`
   margin-bottom: 1rem;
-  font-size: 1.2rem;
+  font-weight: 200;
+  color:black;
+  font-size: 25pt;
+  background-color: transparent;
 `;
 
-const SnackDetailButton = styled.button`
+const OrderDetailButton = styled.button`
   width: 40%;
   text-align: center;
-
+  
 `;
 
 function TicketDetail(props) {
   const { ticket, onClickingDelete, onClickingEdit } = props;
-  return (
-    <TicketObject>
-  
-      <TicketNameTitle>Order- {ticket.number} </TicketNameTitle>
-      <h2>Flavor:</h2>
-      <SnackCopy>{ticket.flavor}</SnackCopy>
-      <h2>Special Requests:</h2>
-      <SnackCopy>{ticket.request}</SnackCopy>
-      <SnackDetailButton onClick={onClickingEdit}>
+  return (    
+  <TicketObject>
+      <TicketNameTitle>Order # {ticket.number} </TicketNameTitle>
+      <TicketNameDetails>{ticket.formattedWaitTime}</TicketNameDetails>
+      <TicketNameDetails>Flavor:</TicketNameDetails>
+      <OrderDetailStyle>{ticket.flavor}</OrderDetailStyle>
+      <TicketNameDetails>Special Requests:</TicketNameDetails>
+      <OrderDetailStyle>{ticket.request}</OrderDetailStyle>
+      <OrderDetailButton onClick={onClickingEdit}>
         Edit
-      </SnackDetailButton>
-      <SnackDetailButton onClick={() => onClickingDelete(ticket.id)}>
+      </OrderDetailButton>
+      <OrderDetailButton onClick={() => onClickingDelete(ticket.id)}>
         Close 
-      </SnackDetailButton>
+      </OrderDetailButton>
     </TicketObject>
   );
 }

@@ -4,11 +4,13 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const TicketListContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
+  display: flex-align;
   justify-content: space-evenly;
+  font-size: 30px;
+  background: red;
+  text-align: center;
 `;
+
 
 
 function TicketList(props) {
@@ -17,10 +19,12 @@ function TicketList(props) {
       {props.ticketList.map(ticket => (
         <Ticket
           whenTicketClicked={props.onTicketSelection}
+          // number= {ticket.number}
           name={ticket.name}
-          origin={ticket.origin}
+          phonenumber={ticket.phonenumber}
+          flavor={ticket.flavor}
           formattedWaitTime={ticket.formattedWaitTime}
-          issue={ticket.issue}
+          request={ticket.request}
           id={ticket.id}
           key={ticket.id}
         />

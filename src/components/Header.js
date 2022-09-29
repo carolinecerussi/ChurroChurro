@@ -5,16 +5,17 @@ import styled from 'styled-components';
 const MainHeader = styled.header`
   display: flex;
   font-family: karla;
-  align-items: baseline;
   justify-content: space-between;
   font-size: 20pt;
-  border-bottom: 3px solid yellow;
+  border-bottom: 3px solid blue;
 `;
 
-const BrandWordmark = styled.p`
-  font-size:90pt;
+const BrandWordmark = styled.h1`
+font-size: 100pt;
+  font-weight: 200;
   font-family: 'gemini moon';
   text-transform: uppercase;
+  text-align: center;
 `;
 
 const MenuList = styled.ul`
@@ -35,7 +36,7 @@ function Header() {
           <MenuListItem>
             <Link to='/'>Home</Link>
             </MenuListItem>            <br></br>
-            <Link to='/sign-in'>Sign In</Link>
+            <Link to='/sign-in'>Account</Link>
         </MenuList>
     </MainHeader>
   );

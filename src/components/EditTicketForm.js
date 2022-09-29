@@ -3,16 +3,7 @@ import ReusableForm from "./ReusableForm";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
-const UpdateButton = styled.button`
 
-  font-size: 20pt;
-  color: black;
-  background-color: transparent;
-  border: none;
-  font-family: 'impact';
-
-  }
-`;
 
 
 function EditTicketForm(props) {
@@ -22,8 +13,9 @@ function EditTicketForm(props) {
     event.preventDefault();
     props.onEditTicket({
       name: event.target.name.value,
-      origin: event.target.origin.value,
-      issue: event.target.request.value,
+      flavor: event.target.name.value,
+      phonenumber: event.target.name.value,
+      request: event.target.request.value,
       id: ticket.id
     });
   }
@@ -32,7 +24,7 @@ function EditTicketForm(props) {
     <React.Fragment>
       <ReusableForm 
         formSubmissionHandler={handleEditTicketFormSubmission} 
-        buttonText= {<UpdateButton>Update Order</UpdateButton>}/>
+        buttonText= {'Order'}/>
     </React.Fragment>
   );
 }

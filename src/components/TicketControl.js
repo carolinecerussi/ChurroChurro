@@ -21,7 +21,7 @@ const StyledButton = styled.button`
   background-color: transparent;
   background-repeat: no-repeat;
   border: none;
-  color: Gold;
+  color: blue;
   font-family: Gemini moon;
   font-size: 30pt;
   margin: 20pt
@@ -73,8 +73,9 @@ function TicketControl() {
           const jsDate = new Date(timeOpen);
           tickets.push({
             name: doc.data().name,
-            origin: doc.data().origin,
-            issue: doc.data().issue,
+            number: doc.data().number,
+            phonenumber: doc.data().origin,
+            request: doc.data().issue,
             timeOpen: jsDate,
             formattedWaitTime: formatDistanceToNow(jsDate),
             id: doc.id
@@ -89,6 +90,19 @@ function TicketControl() {
 
     return () => unSubscribe();
   }, []);
+
+//   const [number, setNumber] = useState(0);
+//   const limiter = 50;
+
+//  useEffect(() => {
+//     const incrementer = setInterval(() => {
+//         if (number === limiter) {
+//             clearInterval(incrementer);
+//         } else {
+//             setNumber(prev => prev+1);
+//         }
+//     }, 500);
+//   })
 
   const handleClick = () => {
     if (selectedTicket != null) {
@@ -128,7 +142,6 @@ function TicketControl() {
   }
 
   if (auth.currentUser == null) {
-
     return (
       <React.Fragment>
         <h3>You must be signed in to access the queue.</h3>
@@ -175,7 +188,6 @@ function TicketControl() {
       <React.Fragment>
         {error ? null :  <StyledButton onClick={handleClick}>{buttonText}</StyledButton>}
         {currentlyVisibleState}
-        
  
       </React.Fragment>
     );

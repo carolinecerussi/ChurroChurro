@@ -12,13 +12,11 @@ font-size: 30pt;
   cursor: pointer;
 }
 `;
-const StyledInputLabel = styled.div `
+const StyledInputLabel = styled.form `
   background-color: white;
   color: white;
+  text-size: 20pt;
   `;
-
-
-
 
 
 function ReusableForm(props) {
@@ -41,7 +39,7 @@ function ReusableForm(props) {
           </select>
         <h2>Special Requests:</h2>
         <textarea name='request' placeholder='ie allergies, silverware ...' />
-        <button type='submit'>{props.buttonText}</button>
+        <StyledButton type='submit'>{props.buttonText}</StyledButton>
       </StyledInputLabel>
   );
 }
