@@ -31,14 +31,14 @@ function ReusableForm(props) {
         <input type='text' name='phonenumber' placeholder="Phone Number" />
         <h2>Churro Flavor:</h2>
         <select name='flavor' id='dropdown' value='Flavor'>
-          <option value='original'>Original (w/o cream) </option>
+          <option value='original'>Original (w/o cream)  </option>
           <option value='vanilla' > Vanilla Cream </option>
           <option value='chocolate'>Chocolate Cream</option>
           <option value='caramel'>Caramel Cream</option>
           <option value='nutella'>Nutella Cream</option>
           </select>
         <h2>Special Requests:</h2>
-        <textarea name='request' placeholder='ie allergies, silverware ...' />
+        <textarea name='request' placeholder='known allergies, utensils ...' />
         <StyledButton type='submit'>{props.buttonText}</StyledButton>
       </StyledInputLabel>
   );

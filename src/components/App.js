@@ -4,13 +4,14 @@ import SignIn from "./SignIn";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
+import TicketList from "./TicketList";
 function App(){
   return ( 
     <Router>
       <Header />
       <Routes>
         <Route path="/sign-in" element={<SignIn />} />
-        <Route path="/" element={<TicketControl />} />
+        <Route path="/tickets" element={<TicketList />} />
       </Routes>
       <Footer />
     </Router>

@@ -19,7 +19,7 @@ function NewTicketForm(props) {
     <React.Fragment>
       <ReusableForm
         onNewTicketCreation={handleNewTicketFormSubmission}
-        buttonText='Order'
+        buttonText='Create Order'
       />
     </React.Fragment>
   );

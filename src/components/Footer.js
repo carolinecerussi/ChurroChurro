@@ -38,7 +38,7 @@ function Footer() {
             <Link to='/about'>About</Link>
           </MenuListItem>
           <MenuListItem>
-            <Link to='/account'>Account</Link>
+            <Link to='/signIn'>Account</Link>
           </MenuListItem>
         </MenuList>
       </React.Fragment>
