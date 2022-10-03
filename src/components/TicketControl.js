@@ -74,8 +74,8 @@ function TicketControl() {
           tickets.push({
             name: doc.data().name,
             number: doc.data().number,
-            phonenumber: doc.data().origin,
-            request: doc.data().issue,
+            phonenumber: doc.data().phonenumber,
+            request: doc.data().request,
             timeOpen: jsDate,
             formattedWaitTime: formatDistanceToNow(jsDate),
             id: doc.id
