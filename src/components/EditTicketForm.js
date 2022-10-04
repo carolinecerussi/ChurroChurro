@@ -1,9 +1,6 @@
-import React, {Component}  from "react";
+import React from "react";
 import ReusableForm from "./ReusableForm";
 import PropTypes from "prop-types";
-import styled from "styled-components";
-
-
 
 
 function EditTicketForm(props) {
@@ -13,7 +10,7 @@ function EditTicketForm(props) {
     event.preventDefault();
     props.onEditTicket({
       name: event.target.name.value,
-      flavor: event.target.name.value,
+      flavor: event.target.flavor.value,
       phonenumber: event.target.name.value,
       request: event.target.request.value,
       id: ticket.id

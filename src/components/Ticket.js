@@ -43,8 +43,8 @@ function Ticket(props) {
         <OrderWaitTime>
           {props.formattedWaitTime} ago
         </OrderWaitTime>
-        <OrderCopy>{props.flavor}</OrderCopy>
-        <OrderCopy>{props.request}</OrderCopy>
+        {/* <OrderCopy>{props.flavor}</OrderCopy> */}
+        {/* <OrderCopy>{props.request}</OrderCopy> */}
     </TicketObject>
   );
 }
@@ -53,6 +53,7 @@ Ticket.propTypes = {
   number: PropTypes.string,
   name: PropTypes.string,
   phonenumber: PropTypes.string,
+  flavor: PropTypes.string,
   request: PropTypes.string,
   formattedWaitTime: PropTypes.string,
   id: PropTypes.string,

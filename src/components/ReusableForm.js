@@ -1,4 +1,6 @@
 import React from "react";
+
+
 import PropTypes from "prop-types";
 import styled from "styled-components";
 const StyledButton = styled.button`
@@ -30,7 +32,7 @@ function ReusableForm(props) {
         <h2>Phone Number:</h2>
         <input type='text' name='phonenumber' placeholder="Phone Number" />
         <h2>Churro Flavor:</h2>
-        <select name='flavor' id='dropdown' value='Flavor'>
+        <select name='flavor' id='dropdown' value="this.option.value">
           <option value='original'>Original (w/o cream)  </option>
           <option value='vanilla' > Vanilla Cream </option>
           <option value='chocolate'>Chocolate Cream</option>

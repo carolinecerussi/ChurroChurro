@@ -7,7 +7,7 @@ const TicketListContainer = styled.div`
   display: flex-align;
   justify-content: space-evenly;
   font-size: 30px;
-  background: red;
+  background: transparent;
   text-align: center;
 `;
 

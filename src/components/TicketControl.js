@@ -24,7 +24,7 @@ const StyledButton = styled.button`
   color: blue;
   font-family: Gemini moon;
   font-size: 30pt;
-  margin: 20pt
+  margin: 20pt;
   &: hover {
     color: black;
     cursor: pointer;
@@ -75,6 +75,7 @@ function TicketControl() {
             name: doc.data().name,
             number: doc.data().number,
             phonenumber: doc.data().phonenumber,
+            flavor: doc.data().flavor,
             request: doc.data().request,
             timeOpen: jsDate,
             formattedWaitTime: formatDistanceToNow(jsDate),
@@ -180,8 +181,7 @@ function TicketControl() {
         <TicketList
           onTicketSelection={handleChangingSelectedTicket}
           ticketList={mainTicketList}
-        />
-      )
+        />)
       buttonText = 'New Order';
     }
     return (
